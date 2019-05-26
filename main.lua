@@ -1,8 +1,8 @@
 --require 'map_functions'
 require 'gamestate'
 require 'tiledmap'
-require 'camera'
 --local Player = require 'player'
+local Camera = require 'camera'
 local GameState = gamestate.new()
 
 function love.load()
@@ -11,6 +11,7 @@ function love.load()
   --Player = Player:new(WIDTH/2, HEIGHT/2, 150)
   _G.map = loadTiledMap('maps/town')
   GameState.load()
+  Camera:new()
 end
 
 
@@ -19,6 +20,8 @@ function love.draw()
   --drawMap()
   _G.map:draw()
   --camera:draw()
+  Camera:set()
+  Camera:unset()
   --love.graphics.draw(Player.Skin, Player.ActiveFrame, Player.Position.X, Player.Position.Y, 0, Player.Height, Player.Width)
   GameState.draw()
 
@@ -29,5 +32,5 @@ end
 function love.update(dt)
   _G.map:update(dt)
   GameState.update(dt)
-  --camera:setPosition(love.mouse.getX() * 2, love.mouse.getY() * 2)
+  Camera:setScale(love.mouse.getX(), love.mouse.getY())
 end

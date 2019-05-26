@@ -55,24 +55,6 @@ end
 function setCurrentFrame(frame)
   Player.CurrentFrame = frame
 end
-
-function movePlayerUp(dt)
-  Player.Position.Y = Player.Position.Y - dt * Player.Speed
-end
-
-function movePlayerDown(dt)
-  Player.Position.Y = Player.Position.Y + dt * Player.Speed
-end
-
-
-function movePlayerLeft(dt)
-  Player.Position.X = Player.Position.X - dt * Player.Speed
-end
-
-function movePlayerRight(dt)
-  Player.Position.X = Player.Position.X + dt * Player.Speed
-end
-
 function Player:drawPlayer()
   love.graphics.draw(Player.Skin, Player.ActiveFrame, Player.X, Player.Y, 0, Player.Height, Player.Width)
 end

@@ -14,6 +14,7 @@ gamestate = {
 
     local elapsedTime = 0
 
+    self.camera = {}
     self.players = {}
     self.neutrals = {}
     self.enemies = {}
@@ -22,6 +23,7 @@ gamestate = {
       world = love.physics.newWorld(0,0,true)
       self.players[1] = Player.new(32, CENTER, 150)
       self.enemies[1] = Enemy.new(23, enemySpawnPoint, 100)
+      --self.camera[1] = new Camera.new()
       --print(self.players[1].Height)
       --print(self.players[1].Speed)
     end
@@ -89,7 +91,6 @@ gamestate = {
           elapsedTime = 0
         end -- for loop
       end -- if
-      --Camera.setPosition(GameState.players[1].Position.X, GameState.players[1].Position.Y)
     end  -- update
     return self
   end
