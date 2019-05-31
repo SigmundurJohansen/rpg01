@@ -17,11 +17,11 @@ function Player:new(pram1,speed)
   self.Position.X = pram1.X
   self.Position.Y = pram1.Y
   self.Speed = speed
-  self.Skin = love.graphics.newImage('resources/ship5.png')
-  self.Frames = {love.graphics.newQuad(0, 0, 24, 24,  Player.Skin:getDimensions()),
-                  love.graphics.newQuad(24, 0, 24, 24, Player.Skin:getDimensions()),
-                  love.graphics.newQuad(48, 0, 24, 24, Player.Skin:getDimensions()),
-                  love.graphics.newQuad(72, 0, 24, 24, Player.Skin:getDimensions())}
+  self.Skin = love.graphics.newImage('resources/wizard.jpeg')
+  self.Frames = {love.graphics.newQuad(110, 40, 90, 90,  Player.Skin:getDimensions()),
+                  love.graphics.newQuad(200, 40, 90, 90, Player.Skin:getDimensions()),
+                  love.graphics.newQuad(290, 40, 90, 90, Player.Skin:getDimensions()),
+                  love.graphics.newQuad(380, 40, 90, 90, Player.Skin:getDimensions())}
   self.ActiveFrame = Player.Frames[1]
   return self
 end

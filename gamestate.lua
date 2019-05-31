@@ -1,5 +1,6 @@
 local Player = require 'player'
 local Enemy = require 'enemy'
+require("camera")
 
 local HEIGHT = love.graphics.getHeight()
 local WIDTH = love.graphics.getWidth()
@@ -26,6 +27,16 @@ gamestate = {
       --self.camera[1] = new Camera.new()
       --print(self.players[1].Height)
       --print(self.players[1].Speed)
+    end
+
+    function self.getX()
+      pos = self.players[1].Position.X
+
+      return pos
+    end
+    function self.getY()
+      pos = self.players[1].Position.Y
+      return pos
     end
 
     -----------------------DRAW-----------------------
@@ -64,6 +75,7 @@ gamestate = {
       elseif love.keyboard.isDown('down', 's') then
         self.players[1].Position.Y = self.players[1].Position.Y + dt * self.players[1].Speed
       end
+      --camera = self.players[1].Position.x
 
       -------------------Enemies----------------------
 
