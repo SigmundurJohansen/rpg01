@@ -25,6 +25,27 @@ function camera:rotate(dr)
   self.rotation = self.rotation + dr
 end
 
+function camera:setX(sx,maxX,minX)
+  if(sx>maxX)then
+    self.x = maxX
+  elseif(sx<minX)then
+    self.x = minX
+  else
+    self.x = sx or self.x
+  end
+end
+
+function camera:setY(sy, maxY, minY)
+  if(sy>maxY)then
+    self.y = maxY
+  elseif(sy<minY)then
+    self.y = minY
+  else
+    self.y = sy or self.y
+  end
+
+end
+
 function camera:scale(sx, sy)
   sx = sx or 1
   self.scaleX = self.scaleX * sx

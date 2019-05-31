@@ -38,7 +38,7 @@ function loadTiledMap(path)
         end
 
         self.timer = self.timer + dt
-        print(self.frame)
+        love.graphics.print(self.frame, 50,50)
     end
 
     function map:draw()
